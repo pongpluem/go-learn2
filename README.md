@@ -187,3 +187,10 @@ https://medium.com/@uracha_p/%E0%B9%81%E0%B8%99%E0%B8%B0%E0%B8%99%E0%B8%B3%E0%B8
 	os.Remove("_decktesting")
 	}	
 
+   42. Struct
+       - card
+         - suit string  ==> Spades
+         - value string ==> Ace
+
+    43. Defining Struct
+
