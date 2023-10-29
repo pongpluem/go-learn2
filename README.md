@@ -194,3 +194,32 @@ https://medium.com/@uracha_p/%E0%B9%81%E0%B8%99%E0%B8%B0%E0%B8%99%E0%B8%B3%E0%B8
 
     43. Defining Struct
 
+    44. Embeding Struct
+    	- Struct in Struct
+     	- 
+
+    45. Struct with receiver function
+    	- 
+
+   46. Pointer
+     	- package main
+
+import "fmt"
+
+func foo(test int) {
+	test = 1 // change the value to 1
+}
+
+func bar(test *int) {
+	*test = 1
+}
+
+func main() {
+	var i = 0
+	fmt.Println("In main, i is", i)
+	foo(i)
+	fmt.Println("After foo call, in main i is", i)
+	bar(&i)
+	fmt.Println("After bar call, in main i is", i)
+}
+
