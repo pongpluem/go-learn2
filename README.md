@@ -223,3 +223,95 @@ func main() {
 	fmt.Println("After bar call, in main i is", i)
 }
 
+  44. Declairing Struct
+    	- type abc struct
+
+   45. Update value of struct
+
+   46. Embeding Struct
+   47. Poiter
+   48. Pass By Value
+   49. Struct with Pointer
+   50. Pointer Operation
+   51. Pointer shortcut
+   52. Gotchas With Pointer
+
+   54. What is Map
+       - Key-> Value
+       - colors := Map[string]string{
+       - "Red": "ff0000",
+       - "Green": "00ff00",
+       - "Blue": "0000ff",    <==== , must
+       - }
+
+ 55. Manipulate Map
+     - var colors = Map[string]string  ==> [] ==>
+     - colors := make(Map[string]string)
+     - colors["white"] = "#ffffff"
+     - delete(colors, "white")
+
+  56. Iterating Map
+      - for key, value := range colors {
+      - 
+      - }
+
+  57. Maps Vs Struct
+
+
+58. Interface
+
+59.  Problem with Inteface
+
+60.  Interface in Practice
+    - type bot interface {
+	getGreeting() string
+}
+
+type englishBot struct{}
+type spanishBot struct{}
+
+func main() {
+	eb := englishBot{}
+	sb := spanishBot{}
+
+	printGreeting(eb)
+	printGreeting(sb)
+
+	printGreeting2(eb)
+	printGreeting2(sb)
+}
+
+func printGreeting(b bot) {
+	fmt.Println(b.getGreeting())
+}
+
+func (englishBot) getGreeting() string {
+	return "Hi there!"
+}
+
+63. HTTP Package
+    - http.Get()
+
+73. Custom Writer
+    - type logWriter struct{}
+
+func main() {
+	resp, err := http.Get("http://google.com")
+	if err != nil {
+		fmt.Println("Error:", err)
+		os.Exit(1)
+	}
+
+	lw := logWriter{}
+
+	io.Copy(lw, resp.Body)
+}
+
+func (logWriter) Write(bs []byte) (int, error) {
+	fmt.Println(string(bs))
+	fmt.Println("Just wrote this many bytes:", len(bs))
+	return len(bs), nil
+}
+
+78. Chamel and Go routine
+    - Concurrent Programming
